@@ -1,0 +1,34 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class Student {
+    private String name;
+    private List<Grade> grades;
+
+    public Student(String name) {
+        this.name = name;
+        this.grades = new ArrayList<>();
+    }
+
+    public void addGrade(Grade grade) {
+        grades.add(grade);
+    }
+
+    public List<Grade> getGrades() {
+        return grades;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Student: ").append(name).append("\n");
+        for (Grade grade : grades) {
+            sb.append(grade).append("\n");
+        }
+        return sb.toString();
+    }
+}
